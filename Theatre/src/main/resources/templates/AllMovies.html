@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>BookYourShow</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Movie List</h1>
+		<table>
+
+			<thead>
+				<tr>
+					<th>Movie Name</th>
+					<th>City</th>
+					<th>genres</th>
+					<th>language</th>
+					<th>Option</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="movie: ${listMovies}">
+					<th th:text="${movie.movieName}"></th>
+					<th th:text="${movie.city}"></th>
+					<th th:text="${movie.genres}"></th>
+					<th th:text="${movie.language}"></th>
+					<th> <a th:href="@{/addToTheatre/__{movie.movieId}__}">Add</a> </th>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+</body>
+</html>

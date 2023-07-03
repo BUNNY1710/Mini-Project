@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>BookYourShow</title>
+</head>
+<body>
+<h1>Add movie to your Theatre</h1>
+	<form th:action="@{/{theatreId}{/movie/{movieId}" th:object = "${MoviePricingDTO}" th:method="PUT">
+	
+		<label for="price"> Add your price:</label>
+		<input type="text" id="price" name="price" required="required" th:required="required"/>
+		<br />
+		
+		<label for="quantity"> Quantity of tickets:</label>
+		<input type="number" id="quantity" name="quantity" required="required" th:required="required"/>
+		<br />
+		
+		<label for="date"> Date of Movie screening:</label>
+		<input type="date" id="date" name="date" required="required" th:required="required"/>
+		<br />
+	
+		
+		<button type="submit">Add movie</button>
+		
+	</form>
+</body>
+
+</body>
+</html>
